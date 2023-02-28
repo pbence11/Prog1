@@ -1,0 +1,131 @@
+#include <iostream>
+#include <string>
+
+int main() 
+{
+std::cout << "Hello World!" << std::endl;
+
+using namespace std;
+cout << "Hello World!" << std::endl;
+
+int szam=92;
+double dupla;
+
+dupla=szam;
+
+
+double double_num=1.11;
+int int_num;
+
+int_num=double_num;
+
+cout << int_num << endl;
+
+
+//explicit
+int z=21;
+double zs;
+
+zs=double(z);
+
+if (21>10)
+{
+    cout << "nagyobb;)" <<endl;
+
+}else if (15>16){
+    cout << "egyéb" << endl;
+}
+
+if (10>9)
+{
+    if(11>10){
+        cout << "belső" << endl;
+    }
+
+}
+
+int cif=10>8? 1:0;
+cout << cif <<endl;
+
+int x1=1;
+int y1=10;
+string eredmeny;
+eredmeny=(x1==y1)? "egyenlo" : "nem egyenlő";
+
+cout <<eredmeny<<endl;
+
+if (x1==y1){
+    eredmeny="egyenlő";
+
+}else if(x1<y1)
+{
+    eredmeny="kisebb";
+}else {
+    eredmeny="nagyobb";
+
+}
+
+cout << eredmeny <<endl;
+
+/*int nap=1;
+switch (nap)
+{
+    case 6:
+        cout << "szombat" <<endl;
+    case 7:
+        cout << "vasárnap" <<endl;
+    default :
+        cout << "mindjárt hétvége" <<endl;
+        break;
+}*/
+
+int i=0;
+
+while (i<10) //elől tesztelős ciklus
+{
+    cout << i << endl;
+    i++;
+}
+
+i=0;
+do //hátul tesztelős, legalább 1x le szeretnénk futtatni a ciklusmagban lévő utasításokat
+{
+    ++i;
+    cout << i <<endl;
+} while (i<10);
+
+
+for (int i=0; i<10; i++) //for(ciklusváltozó inicializálása, lellási feltétel, ciklusváltozó értékváltozása)
+{
+    cout<<i<<endl;
+}
+
+for (int i = 0; i <=2; i++)
+{
+    cout<<"külső"<<endl;
+    for (int j = 0; j <= 3; i++)
+    {
+        cout<<"belső"<<endl;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+return 0;
+}
