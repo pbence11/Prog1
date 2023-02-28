@@ -1,0 +1,167 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+    struct
+    {
+        int szul_ev;
+        std::string nev;
+    } szemely1, szemely2;
+
+    szemely1.szul_ev=2003;
+    szemely1.nev= "Tóth Ferenc";
+    
+    szemely2=szemely1;
+
+    using namespace std;
+
+    cout << szemely1.szul_ev << " " << szemely1.nev << endl;
+    cout << szemely2.szul_ev << " " << szemely2.nev << endl;
+
+    szemely1.szul_ev=2001;
+    cout << szemely1.szul_ev << " " << szemely1.nev << endl;
+    cout << szemely2.szul_ev << " " << szemely2.nev << endl;
+
+    struct jarmu{
+        string marka;
+        string tipus;
+        short int evjarat;
+
+    };
+
+        jarmu swift;
+        swift.marka="Suzuki";
+        swift.tipus="Swift";
+        swift.evjarat=2002;
+
+        jarmu civic;
+        civic.marka="Honda";
+        civic.tipus="Civic";
+        civic.evjarat=2000;
+
+        if (swift.evjarat > civic.evjarat){
+            cout << "A" << swift.tipus  << " fiatalabb" << endl;
+
+        }else{
+            cout << "A" << civic.tipus  << " fiatalabb" << endl;
+        }
+
+        string st= "narancs";
+        string& gyumolcs= st;
+
+        cout << st << " " << gyumolcs << endl;
+        cout << &st << " " <<&gyumolcs<<endl;
+
+
+        cout << &civic << " " << &civic.marka << endl;
+
+
+        int a=10;
+        int *b=&a;
+        //int *c=a; pointernek mindig memória az értéke
+
+        cout << a << " " << &a << " " << b << " " << &b << endl;
+
+
+        cout << *b << endl;
+        cout << sizeof(b) << endl;
+        *b=15;
+        cout << a << " " << *b << endl;
+
+        int* ptr=NULL;
+
+        if(ptr) {
+            cout << "Nem NULL" << endl;
+        }else {
+            cout << "NULL" << endl;
+        }
+
+
+        int tomb[5] = {1,2,3,4,5};
+        int* tptr;
+
+        tptr =tomb;
+        cout << tomb << " " << &tomb [0] << " " << tptr << endl;
+
+
+
+        for (int i = 0; i < 5; i++)
+        {
+            cout << tptr << " " << *tptr << endl;
+            tptr++;
+        }
+
+        cout << endl <<endl;
+
+        tptr = &tomb[4];
+
+        for (int i = 5; i > 0; i--)
+        {
+            cout << tptr << " " << *tptr << endl;
+            tptr--;
+        }
+
+        while (tptr <= &tomb[4]){
+            cout << tptr << " " << *tptr << endl;
+            tptr++;
+        }
+
+        cout << endl <<endl;
+
+        *(tomb+4)=500;
+
+        cout<<tomb[4]<<endl;
+
+        for (int i = 0; i <5; i++)
+        {
+            *(tomb+i)=1;
+            //tomb++;
+        }
+        
+
+        int* ptrtomb[5];
+        for (int i = 0; i < 5; i++)
+        {
+            ptrtomb[i]=&tomb[i];
+            cout << *ptrtomb[i] << endl;
+        }
+        
+        const char* names[3]
+        {"Alekosz", "Lakatos Ronaldo", "Alányos Kalányos"};
+
+
+    for (int i =0 ;i< 3; i++)
+    {
+        cout << (names+i) << " " << *(names+i) << endl; 
+    }
+    
+    int z=10;
+    int * zptr =&z;
+    int ** zpptr=&zptr;
+    cout << z << " " << *zptr << " " << **zpptr << endl;
+
+    //*p++ vagy *(p++) pointer inkrementálása, majd megnövelés előtti címen található pointer dereferencelése.
+    //*++p vagy *(++p) pointer inkrementálása, majd dereference
+    //++*p vagy ++(*p) pointer dereference, majd érték növelése 
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+return 0;
+}
